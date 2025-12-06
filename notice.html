@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>공지사항 - 리코타파</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fafafa;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 10px 14px;
+      background: #ff7043;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header h1 {
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .back-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    main {
+      flex: 1;
+      padding: 16px 14px 24px;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .notice {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+      border-left: 4px solid #ff7043;
+    }
+
+    .notice--info { border-left-color: #42a5f5; }
+    .notice--warning { border-left-color: #ffa000; }
+    .notice--urgent { border-left-color: #e53935; }
+
+    .notice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .notice-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .notice-meta {
+      font-size: 0.75rem;
+      color: #777;
+      white-space: nowrap;
+    }
+
+    .notice-body {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: #ffe0b2;
+      color: #e65100;
+      margin-right: 4px;
+    }
+
+    .updated-hint {
+      font-size: 0.75rem;
+      color: #777;
+      margin: 4px 2px 10px;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 12px 10px 20px;
+      }
+      .notice {
+        padding: 12px 10px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">← 메인으로</a>
+    <h1>공지사항</h1>
+  </header>
+
+  <main>
+    <div class="updated-hint">
+      🔄 가장 위에 있는 공지가 가장 최근 내용입니다.
+    </div>
+
+    <!-- 🔥 최신 공지 (위에 계속 추가) -->
+    <article class="notice notice--urgent">
+      <div class="notice-header">
+        <div class="notice-title">
+          <span class="tag">필독</span>
+          12월 주말 근무 가능일 입력 안내
+        </div>
+        <div class="notice-meta">
+          2025-12-01 · 운영팀
+        </div>
+      </div>
+      <div class="notice-body">
+12월 주말(토·일) 근무 가능일을 이번 주 수요일까지 모두 입력해주세요.
+
+- 입력 위치: 근무표 페이지 상단 [근무 가능 체크] 시트
+- 오픈/마감 모두 가능하면 둘 다 표시
+- 스케줄 확정 후 개인별로 다시 공지드립니다.
+      </div>
+    </article>
+
+    <!-- 예시 공지 2 -->
+    <article class="notice notice--info">
+      <div class="notice-header">
+        <div class="notice-title">
+          겨울 시즌 뱅쇼 준비 안내
+        </div>
+        <div class="notice-meta">
+          2025-11-28 · 주방
+        </div>
+      </div>
+      <div class="notice-body">
+이번 주말부터 뱅쇼 판매가 시작됩니다.
+
+- 레시피: 노션 레시피 페이지 참고
+- 시나몬 스틱, 오렌지 슬라이스 미리 세팅
+- 서빙용 컵 수량 매장 마감 전 다시 체크해주세요.
+      </div>
+    </article>
+
+    <!-- 여기에 계속 아래로 과거 공지 쌓아가면 됨 -->
+  </main>
+</body>
+</html>

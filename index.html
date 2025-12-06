@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>리코타파 직원 페이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 480px;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 4px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 18px;
+      text-align: center;
+      border-radius: 999px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-primary {
+      background: #ff7043;
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(255, 112, 67, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #ff5722;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(255, 112, 67, 0.55);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+
+    .btn-secondary:hover {
+      background: #fafafa;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .small {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 16px 18px;
+        border-radius: 14px;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <h1>리코타파 직원 페이지</h1>
+      <div class="subtitle">근무표 확인 & 공지사항 확인 전용 페이지입니다.</div>
+
+      <div class="btn-group">
+        <a href="schedule.html" class="btn btn-primary">
+          📅 근무표 / 캘린더 확인
+        </a>
+
+        <a href="notices.html" class="btn btn-secondary">
+          📢 공지사항 확인
+        </a>
+
+        <!-- 필요하면 나중에 메뉴 하나 더 추가 -->
+        <!-- <a href="#" class="btn btn-secondary">📘 매뉴얼 / 레시피</a> -->
+      </div>
+
+      <div class="small">
+        북마크 해두고 여기서만 확인하면 됩니다 🙂
+      </div>
+    </div>
+  </div>
+</body>
+</html>
