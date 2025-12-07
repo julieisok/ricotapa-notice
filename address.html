@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact & Info | 근무페이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .brand-pill {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
+    }
+
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.16s ease-out;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    nav a.active {
+      color: #0b1120;
+      background: var(--accent);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 2rem;
+      width: 100%;
+    }
+
+    .page-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .page-title span.badge {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .page-sub {
+      margin: 0.2rem 0 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .info-card {
+      background: radial-gradient(circle at top left, var(--accent-soft), var(--card));
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 0.75rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card b {
+      color: var(--text);
+    }
+
+    .info-card code {
+      font-size: 0.78rem;
+      padding: 0.1rem 0.3rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(55, 65, 81, 0.7);
+      color: var(--accent);
+    }
+
+    .iframe-wrap {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #020617;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .iframe-top-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.22), #020617);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f87171;
+    }
+    .dot:nth-child(2) {
+      background: #facc15;
+    }
+    .dot:nth-child(3) {
+      background: #4ade80;
+    }
+
+    .iframe-inner {
+      flex: 1;
+      display: flex;
+    }
+
+    .iframe-inner iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.75rem 1rem 1.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      main {
+        padding-top: 1rem;
+      }
+
+      .page-title h1 {
+        font-size: 1.15rem;
+      }
+
+      .info-card {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <span class="brand-pill"></span>
+        <span>리코타파 근무 · 안내</span>
+      </div>
+      <nav>
+        <a href="index.html">메인</a>
+        <a href="schedule.html">근무표</a>
+        <a href="notices.html">공지사항</a>
+        <a href="address.html" class="active">Contact / 안내</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <h1>
+        Contact & 안내
+        <span class="badge">Notion 연동</span>
+      </h1>
+      <p class="page-sub">
+        리코타파 직원용 연락처, 매장 기본 정보, 읽어두면 좋은 안내를 노션 페이지로 모아두고 여기에서 바로 볼 수 있게 연결해 둔 화면이에요.
+      </p>
+    </section>
+
+    <section class="info-card">
+      
+    </section>
+
+    <section class="iframe-wrap">
+      <div class="iframe-top-bar">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span style="margin-left: 0.4rem;">Notion contacts & 안내 페이지</span>
+      </div>
+      <div class="iframe-inner">
+        <!-- ⬇⬇⬇ 여기 src에 노션 공유 링크를 넣어주세요 ⬇⬇⬇ -->
+        <iframe src="https://coal-pot-74d.notion.site/ebd//2b4e8bba2df68014b39bec6695516899?v=2b4e8bba2df680c08669000cb4e90bd7" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    리코타파 내부용 · GitHub Pages / Notion 연동 · 필요 시 매장 공지에 따라 수시 수정
+  </footer>
+</body>
+</html>
